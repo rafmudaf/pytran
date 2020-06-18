@@ -7,6 +7,16 @@ module fortranlib
 
     contains
 
+    subroutine add_vec3(v1, v2, v_res) bind(c, name='add_vec3')
+        type(Vec3), intent(in) :: v1, v2
+        type(Vec3), intent(out) :: v_res
+
+        v_res%x1 = v1%x1 + v2%x1
+        v_res%x2 = v1%x2 + v2%x2
+        v_res%x3 = v1%x3 + v2%x3
+
+    end subroutine
+
     subroutine print_vec3(vector) bind(c, name='print_vec3')
 
         type(Vec3), intent(in) :: vector

@@ -34,12 +34,17 @@ class Vec3(Structure):
 
     Args:
         Structure ([type]): [description]
+
+    # TODO: can we define an __init__() function?
     """
     _fields_ = [
     	("x1", c_float),
     	("x3", c_float),
     	("x2", c_float),
 	]
+
+    def __str__(self):
+        return f"<{self.x1}, {self.x2}, {self.x3}>"
 
 class Strings(Structure):
     _fields_ = [
